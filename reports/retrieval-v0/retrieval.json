@@ -1,0 +1,504 @@
+{
+  "corpus_size": 11,
+  "question_count": 17,
+  "test_type": "author_written_diagnostic_not_blind_benchmark",
+  "generation_tested": false,
+  "reports": {
+    "bm25": {
+      "in_scope_count": 13,
+      "unsupported_count": 4,
+      "hit_at_1": 0.9230769230769231,
+      "hit_at_3": 0.9230769230769231,
+      "mrr_at_3": 0.9230769230769231,
+      "bridge_hit_at_3": 1.0,
+      "unsupported_with_candidates": 0,
+      "mean_search_ms": 0.04716470588235294,
+      "records": [
+        {
+          "id": "goal",
+          "question": "一个运营需求，怎么翻译成机器学习任务？",
+          "kind": "core",
+          "retrieved_ids": [
+            "task_goal",
+            "features_and_target",
+            "classification_vs_clustering"
+          ],
+          "relevant_ids": [
+            "features_and_target",
+            "task_goal"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0876
+        },
+        {
+          "id": "classification",
+          "question": "根据历史标签预测客户未来一个月是否购买",
+          "kind": "core",
+          "retrieved_ids": [
+            "classification",
+            "regression",
+            "classification_vs_clustering"
+          ],
+          "relevant_ids": [
+            "classification",
+            "features_and_target",
+            "task_goal"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0832
+        },
+        {
+          "id": "regression",
+          "question": "想估计下一月销售额，目标是金额，不是买不买",
+          "kind": "core",
+          "retrieved_ids": [
+            "regression",
+            "probability_vs_regression",
+            "probability_to_action"
+          ],
+          "relevant_ids": [
+            "regression",
+            "task_goal"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0589
+        },
+        {
+          "id": "clustering",
+          "question": "没有现成客群标签，想发现行为相似的客户群",
+          "kind": "core",
+          "retrieved_ids": [
+            "classification_vs_clustering",
+            "clustering",
+            "task_goal"
+          ],
+          "relevant_ids": [
+            "classification_vs_clustering",
+            "clustering"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0615
+        },
+        {
+          "id": "probability_bridge",
+          "question": "分类输出0.7的概率，为什么不叫回归？",
+          "kind": "bridge",
+          "retrieved_ids": [
+            "probability_vs_regression",
+            "classification",
+            "classification_metrics"
+          ],
+          "relevant_ids": [
+            "probability_vs_regression"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0556
+        },
+        {
+          "id": "group_bridge",
+          "question": "分类和聚类都把客户分组，区别到底在哪？",
+          "kind": "bridge",
+          "retrieved_ids": [
+            "classification_vs_clustering",
+            "clustering",
+            "cluster_id"
+          ],
+          "relevant_ids": [
+            "classification_vs_clustering"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0535
+        },
+        {
+          "id": "action_bridge",
+          "question": "已有购买概率，为什么行动还要定一个阈值？",
+          "kind": "bridge",
+          "retrieved_ids": [
+            "probability_to_action",
+            "cluster_id",
+            "probability_vs_regression"
+          ],
+          "relevant_ids": [
+            "probability_to_action"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.048
+        },
+        {
+          "id": "alias_probability",
+          "question": "买的可能性有七成，这个数怎么拿来做行动规则？",
+          "kind": "paraphrase",
+          "retrieved_ids": [
+            "probability_to_action"
+          ],
+          "relevant_ids": [
+            "probability_to_action"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0379
+        },
+        {
+          "id": "alias_regression",
+          "question": "想预估他下个月花多少钱，这要什么任务？",
+          "kind": "paraphrase",
+          "retrieved_ids": [],
+          "relevant_ids": [
+            "regression",
+            "task_goal"
+          ],
+          "rank": null,
+          "elapsed_ms": 0.0336
+        },
+        {
+          "id": "metrics",
+          "question": "precision和recall分别看误报还是漏报？",
+          "kind": "core",
+          "retrieved_ids": [
+            "imbalanced_accuracy",
+            "classification_metrics"
+          ],
+          "relevant_ids": [
+            "classification_metrics",
+            "imbalanced_accuracy"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0351
+        },
+        {
+          "id": "accuracy",
+          "question": "欺诈很少时全判正常也有99%准确率，为什么不行？",
+          "kind": "core",
+          "retrieved_ids": [
+            "imbalanced_accuracy",
+            "classification_metrics"
+          ],
+          "relevant_ids": [
+            "imbalanced_accuracy"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0431
+        },
+        {
+          "id": "cluster_number",
+          "question": "聚类的组号2表示比组号1更有价值吗？",
+          "kind": "core",
+          "retrieved_ids": [
+            "cluster_id",
+            "imbalanced_accuracy",
+            "classification"
+          ],
+          "relevant_ids": [
+            "cluster_id"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0508
+        },
+        {
+          "id": "target",
+          "question": "预测时能用哪些输入特征，X和Y怎么区分？",
+          "kind": "core",
+          "retrieved_ids": [
+            "features_and_target",
+            "cluster_id",
+            "classification"
+          ],
+          "relevant_ids": [
+            "features_and_target"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0543
+        },
+        {
+          "id": "weather",
+          "question": "明天深圳会下雨吗？",
+          "kind": "unsupported",
+          "retrieved_ids": [],
+          "relevant_ids": [],
+          "rank": null,
+          "elapsed_ms": 0.0215
+        },
+        {
+          "id": "transformer",
+          "question": "Transformer注意力矩阵的维度怎么推导？",
+          "kind": "unsupported",
+          "retrieved_ids": [],
+          "relevant_ids": [],
+          "rank": null,
+          "elapsed_ms": 0.025
+        },
+        {
+          "id": "overlap_unsupported",
+          "question": "概率论的贝叶斯公式怎么证明？",
+          "kind": "unsupported",
+          "retrieved_ids": [],
+          "relevant_ids": [],
+          "rank": null,
+          "elapsed_ms": 0.0263
+        },
+        {
+          "id": "advanced_unsupported",
+          "question": "聚类算法的收敛性证明是什么？",
+          "kind": "unsupported",
+          "retrieved_ids": [],
+          "relevant_ids": [],
+          "rank": null,
+          "elapsed_ms": 0.0259
+        }
+      ]
+    },
+    "concept-bm25": {
+      "in_scope_count": 13,
+      "unsupported_count": 4,
+      "hit_at_1": 0.9230769230769231,
+      "hit_at_3": 1.0,
+      "mrr_at_3": 0.9615384615384616,
+      "bridge_hit_at_3": 1.0,
+      "unsupported_with_candidates": 2,
+      "mean_search_ms": 0.07124117647058824,
+      "records": [
+        {
+          "id": "goal",
+          "question": "一个运营需求，怎么翻译成机器学习任务？",
+          "kind": "core",
+          "retrieved_ids": [
+            "task_goal",
+            "features_and_target",
+            "regression"
+          ],
+          "relevant_ids": [
+            "features_and_target",
+            "task_goal"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0795
+        },
+        {
+          "id": "classification",
+          "question": "根据历史标签预测客户未来一个月是否购买",
+          "kind": "core",
+          "retrieved_ids": [
+            "classification",
+            "classification_vs_clustering",
+            "features_and_target"
+          ],
+          "relevant_ids": [
+            "classification",
+            "features_and_target",
+            "task_goal"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0988
+        },
+        {
+          "id": "regression",
+          "question": "想估计下一月销售额，目标是金额，不是买不买",
+          "kind": "core",
+          "retrieved_ids": [
+            "regression",
+            "probability_vs_regression",
+            "task_goal"
+          ],
+          "relevant_ids": [
+            "regression",
+            "task_goal"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0866
+        },
+        {
+          "id": "clustering",
+          "question": "没有现成客群标签，想发现行为相似的客户群",
+          "kind": "core",
+          "retrieved_ids": [
+            "classification_vs_clustering",
+            "clustering",
+            "task_goal"
+          ],
+          "relevant_ids": [
+            "classification_vs_clustering",
+            "clustering"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0827
+        },
+        {
+          "id": "probability_bridge",
+          "question": "分类输出0.7的概率，为什么不叫回归？",
+          "kind": "bridge",
+          "retrieved_ids": [
+            "probability_vs_regression",
+            "classification",
+            "classification_metrics"
+          ],
+          "relevant_ids": [
+            "probability_vs_regression"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0811
+        },
+        {
+          "id": "group_bridge",
+          "question": "分类和聚类都把客户分组，区别到底在哪？",
+          "kind": "bridge",
+          "retrieved_ids": [
+            "classification_vs_clustering",
+            "clustering",
+            "task_goal"
+          ],
+          "relevant_ids": [
+            "classification_vs_clustering"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0786
+        },
+        {
+          "id": "action_bridge",
+          "question": "已有购买概率，为什么行动还要定一个阈值？",
+          "kind": "bridge",
+          "retrieved_ids": [
+            "probability_to_action",
+            "probability_vs_regression",
+            "cluster_id"
+          ],
+          "relevant_ids": [
+            "probability_to_action"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0759
+        },
+        {
+          "id": "alias_probability",
+          "question": "买的可能性有七成，这个数怎么拿来做行动规则？",
+          "kind": "paraphrase",
+          "retrieved_ids": [
+            "probability_to_action"
+          ],
+          "relevant_ids": [
+            "probability_to_action"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0654
+        },
+        {
+          "id": "alias_regression",
+          "question": "想预估他下个月花多少钱，这要什么任务？",
+          "kind": "paraphrase",
+          "retrieved_ids": [
+            "probability_vs_regression",
+            "task_goal",
+            "regression"
+          ],
+          "relevant_ids": [
+            "regression",
+            "task_goal"
+          ],
+          "rank": 2,
+          "elapsed_ms": 0.0658
+        },
+        {
+          "id": "metrics",
+          "question": "precision和recall分别看误报还是漏报？",
+          "kind": "core",
+          "retrieved_ids": [
+            "imbalanced_accuracy",
+            "classification_metrics"
+          ],
+          "relevant_ids": [
+            "classification_metrics",
+            "imbalanced_accuracy"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0597
+        },
+        {
+          "id": "accuracy",
+          "question": "欺诈很少时全判正常也有99%准确率，为什么不行？",
+          "kind": "core",
+          "retrieved_ids": [
+            "imbalanced_accuracy",
+            "classification_metrics"
+          ],
+          "relevant_ids": [
+            "imbalanced_accuracy"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0682
+        },
+        {
+          "id": "cluster_number",
+          "question": "聚类的组号2表示比组号1更有价值吗？",
+          "kind": "core",
+          "retrieved_ids": [
+            "cluster_id",
+            "imbalanced_accuracy",
+            "classification"
+          ],
+          "relevant_ids": [
+            "cluster_id"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0792
+        },
+        {
+          "id": "target",
+          "question": "预测时能用哪些输入特征，X和Y怎么区分？",
+          "kind": "core",
+          "retrieved_ids": [
+            "features_and_target",
+            "regression",
+            "task_goal"
+          ],
+          "relevant_ids": [
+            "features_and_target"
+          ],
+          "rank": 1,
+          "elapsed_ms": 0.0841
+        },
+        {
+          "id": "weather",
+          "question": "明天深圳会下雨吗？",
+          "kind": "unsupported",
+          "retrieved_ids": [],
+          "relevant_ids": [],
+          "rank": null,
+          "elapsed_ms": 0.0439
+        },
+        {
+          "id": "transformer",
+          "question": "Transformer注意力矩阵的维度怎么推导？",
+          "kind": "unsupported",
+          "retrieved_ids": [],
+          "relevant_ids": [],
+          "rank": null,
+          "elapsed_ms": 0.0483
+        },
+        {
+          "id": "overlap_unsupported",
+          "question": "概率论的贝叶斯公式怎么证明？",
+          "kind": "unsupported",
+          "retrieved_ids": [
+            "probability_to_action",
+            "probability_vs_regression",
+            "classification_metrics"
+          ],
+          "relevant_ids": [],
+          "rank": null,
+          "elapsed_ms": 0.0562
+        },
+        {
+          "id": "advanced_unsupported",
+          "question": "聚类算法的收敛性证明是什么？",
+          "kind": "unsupported",
+          "retrieved_ids": [
+            "cluster_id",
+            "clustering",
+            "classification_vs_clustering"
+          ],
+          "relevant_ids": [],
+          "rank": null,
+          "elapsed_ms": 0.0571
+        }
+      ]
+    }
+  }
+}

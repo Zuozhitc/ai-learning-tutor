@@ -1,0 +1,19 @@
+[
+ {"id":"goal","kind":"core","question":"一个运营需求，怎么翻译成机器学习任务？","relevant_ids":["task_goal","features_and_target"]},
+ {"id":"classification","kind":"core","question":"根据历史标签预测客户未来一个月是否购买","relevant_ids":["classification","features_and_target","task_goal"]},
+ {"id":"regression","kind":"core","question":"想估计下一月销售额，目标是金额，不是买不买","relevant_ids":["regression","task_goal"]},
+ {"id":"clustering","kind":"core","question":"没有现成客群标签，想发现行为相似的客户群","relevant_ids":["clustering","classification_vs_clustering"]},
+ {"id":"probability_bridge","kind":"bridge","question":"分类输出0.7的概率，为什么不叫回归？","relevant_ids":["probability_vs_regression"]},
+ {"id":"group_bridge","kind":"bridge","question":"分类和聚类都把客户分组，区别到底在哪？","relevant_ids":["classification_vs_clustering"]},
+ {"id":"action_bridge","kind":"bridge","question":"已有购买概率，为什么行动还要定一个阈值？","relevant_ids":["probability_to_action"]},
+ {"id":"alias_probability","kind":"paraphrase","question":"买的可能性有七成，这个数怎么拿来做行动规则？","relevant_ids":["probability_to_action"]},
+ {"id":"alias_regression","kind":"paraphrase","question":"想预估他下个月花多少钱，这要什么任务？","relevant_ids":["regression","task_goal"]},
+ {"id":"metrics","kind":"core","question":"precision和recall分别看误报还是漏报？","relevant_ids":["classification_metrics","imbalanced_accuracy"]},
+ {"id":"accuracy","kind":"core","question":"欺诈很少时全判正常也有99%准确率，为什么不行？","relevant_ids":["imbalanced_accuracy"]},
+ {"id":"cluster_number","kind":"core","question":"聚类的组号2表示比组号1更有价值吗？","relevant_ids":["cluster_id"]},
+ {"id":"target","kind":"core","question":"预测时能用哪些输入特征，X和Y怎么区分？","relevant_ids":["features_and_target"]},
+ {"id":"weather","kind":"unsupported","question":"明天深圳会下雨吗？","relevant_ids":[]},
+ {"id":"transformer","kind":"unsupported","question":"Transformer注意力矩阵的维度怎么推导？","relevant_ids":[]},
+ {"id":"overlap_unsupported","kind":"unsupported","question":"概率论的贝叶斯公式怎么证明？","relevant_ids":[]},
+ {"id":"advanced_unsupported","kind":"unsupported","question":"聚类算法的收敛性证明是什么？","relevant_ids":[]}
+]

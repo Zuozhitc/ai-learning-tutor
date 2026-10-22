@@ -1,0 +1,8 @@
+[
+  {"id":"google-supervised","title":"Google: Supervised Learning","url":"https://developers.google.com/machine-learning/intro-to-ml/supervised","checked_on":"2026-10-22","usage":"Independently written Chinese teaching summaries; facts checked against this page, not a page mirror."},
+  {"id":"google-classification","title":"Google: Classification","url":"https://developers.google.com/machine-learning/crash-course/classification","checked_on":"2026-10-22","usage":"Independently written summaries and simulated examples."},
+  {"id":"google-regression","title":"Google: Linear regression","url":"https://developers.google.com/machine-learning/crash-course/linear-regression","checked_on":"2026-10-22","usage":"Independently written summaries and simulated examples."},
+  {"id":"google-clustering","title":"Google: What is clustering?","url":"https://developers.google.com/machine-learning/clustering/overview","checked_on":"2026-10-22","usage":"Independently written summaries and simulated examples."},
+  {"id":"sklearn-threshold","title":"scikit-learn: Tuning the decision threshold","url":"https://scikit-learn.org/stable/modules/classification_threshold.html","checked_on":"2026-10-22","usage":"Independently written explanation of scores versus decisions."},
+  {"id":"sklearn-metrics","title":"scikit-learn: Metrics and scoring","url":"https://scikit-learn.org/stable/modules/model_evaluation.html","checked_on":"2026-10-22","usage":"Independently written definitions and original toy arithmetic."}
+]

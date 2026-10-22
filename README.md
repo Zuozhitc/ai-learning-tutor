@@ -1,6 +1,6 @@
 # AI 基础概念学习辅导
 
-状态：需求探索。工作目录暂名 `ai-learning-tutor`，正式产品名称待定。
+状态：需求探索与检索原型 v0。已实现教材检索和上下文导出，尚未接入生成模型；正式产品名称待定。
 
 项目主页：[Zuozhitc/ai-learning-tutor](https://github.com/Zuozhitc/ai-learning-tutor)。后续进展持续更新到本仓库。
 
@@ -46,7 +46,23 @@
 - [首版需求摘要草案](docs/mvp-brief.md)
 - [关联概念辅导流程草案](docs/learning-flow.md)
 - [教学来源与 8B + RAG 候选方案](docs/knowledge-and-rag.md)
+- [检索原型：运行方法与方式取舍](docs/retrieval-prototype.md)
+- [17题检索诊断报告](reports/retrieval-v0/retrieval.md)
+
+## 运行检索原型
+
+Python 3.10+，无需安装额外依赖；在项目目录执行：
+
+```powershell
+python -m tutor_rag search "分类输出0.7的概率，为什么不叫回归？"
+python -m tutor_rag search "想预估他下个月花多少钱，这要什么任务？" --mode concept-bm25
+python -m tutor_rag prompt "分类输出概率为什么不是回归？"
+python -m tutor_rag evaluate --out reports/retrieval-v0
+python -m unittest discover -s tests -v
+```
+
+默认 BM25，概念增强版供对照。search 展示教材候选与官方来源，prompt 导出准备交给模型的上下文，**二者均不生成答案**。当前有11张教学卡、6个来源记录，内容为AI对照来源整理的初稿。小诊断集中BM25为12/13题找到前三位相关卡，增强版为13/13，但增强版对4个无支持问题中的2个也返回候选。结果不是独立盲测或教学效果验证。
 
 ## 当前下一步
 
-已确认首位学习者偏好“先听完一小段，再统一确认理解”。用户进一步提出约 8B 模型与 RAG 的应用假设。下一步先整理一个小目标的可审核教材、关联卡、题目与验收样例，再比较直接提供材料与检索材料的效果。具体模型、RAG 选型、交互机制和教学效果均未验证。
+先由学习者审阅教材卡并提供其他真实问法，复核检索结果；随后再接入真实嵌入模型进行向量检索对照，以及具体8B生成模型。用户本轮确认目前没有模型服务，先查看检索原型。课程状态机、段末统一确认和完整教学效果仍未实现或验证。
