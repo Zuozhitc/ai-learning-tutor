@@ -1,0 +1,18 @@
+{
+ "provenance":"Codex-authored synthetic demonstration, not a learner study or real model inference",
+ "unit_id":"probability_vs_regression",
+ "steps":[
+  {"action":"model_fixture","kind":"explain","response":{"status":"grounded","text":"本轮只区分目标和输出。预测是否购买的目标是类别，0.8是购买概率估计；预测购买金额的目标是数值，800元是金额估计。两者都出现数字，但数字的含义与目标不同。[probability_vs_regression]","citations":["probability_vs_regression"]}},
+  {"action":"event","kind":"defer","text":"以后再了解阈值该怎么选。"},
+  {"action":"event","kind":"pause"},
+  {"action":"event","kind":"resume"},
+  {"action":"event","kind":"checkpoint"},
+  {"action":"event","kind":"answer","text":"两个都输出数字，所以我认为都是回归。"},
+  {"action":"model_fixture","kind":"assess","response":{"status":"grounded","text":"这个示例回答仍按数字形式判断，尚未区分目标；需要补充目标与输出的关系。[probability_vs_regression]","citations":["probability_vs_regression"],"verdict":"needs_support"}},
+  {"action":"model_fixture","kind":"remediate","response":{"status":"grounded","text":"先看问题问什么：甲问买或不买，0.8服务于这个类别判断；乙问金额多少，800元才是金额目标。先说出目标，再解释数值的意义。[classification][regression]","citations":["classification","regression"]}},
+  {"action":"event","kind":"checkpoint"},
+  {"action":"event","kind":"answer","text":"甲的目标是是否购买，0.8是购买概率估计，仍是分类；乙的目标是金额，800元是未来30天金额预测，属于回归。估计都不是保证。"},
+  {"action":"model_fixture","kind":"assess","response":{"status":"grounded","text":"这次示例回答已区分目标及两个数字。它发生在补充提示后，可记录为有帮助的作答证据，不代表独立掌握。[probability_vs_regression]","citations":["probability_vs_regression"],"verdict":"evidence_recorded"}},
+  {"action":"model_fixture","kind":"summarize","response":{"status":"grounded","text":"本轮已完成区分目标与输出的练习，记录了一次提示后作答。阈值问题仍保留，下一步是否展开由学习者选择。[probability_vs_regression]","citations":["probability_vs_regression"]}}
+ ]
+}

@@ -1,0 +1,344 @@
+{
+  "date": "2026-10-23",
+  "verification_type": "codex_manually_filled_contract_walkthrough",
+  "synthetic_learner": true,
+  "provider_api_called": false,
+  "real_8b_model_tested": false,
+  "teaching_effectiveness_established": false,
+  "reviewer_independent": false,
+  "interaction_pairs": [
+    {
+      "request": {
+        "request_id": "f552cf4bed584a5ab04571a2640e51cd",
+        "session_id": "c4636aef761e4d78871b36d1d67958fc",
+        "kind": "explain",
+        "goal": "用客户购买案例区分任务目标与概率输出，解释为什么分类输出数字仍不等于回归",
+        "question": "",
+        "materials": [
+          {
+            "id": "probability_vs_regression",
+            "title": "关联卡：分类输出概率，为什么仍是分类？",
+            "content": "区分任务目标与输出形式。若目标是未来30天‘购买或不购买’，模型可以输出购买这一类别的概率估计0.7，任务仍围绕类别预测。若目标是购买金额，则是在预测金额数值。0.7本身不能决定是哪类任务，必须结合它代表的含义；概率估计也不保证该客户一定购买，或一定有校准良好的70%真实频率。",
+            "sources": [
+              "https://developers.google.com/machine-learning/crash-course/classification",
+              "https://scikit-learn.org/stable/modules/classification_threshold.html"
+            ]
+          },
+          {
+            "id": "classification",
+            "title": "分类：预测预先定义的类别",
+            "content": "分类的目标是判断对象属于哪些预先定义的类别。教学模拟：用历史客户记录及是否购买的标签，预测新客户未来30天是否购买。二分类有两个目标类别；普通多分类是在多个互斥类别中选一个。标签即使写成0和1也可以代表类别，不能只看输出是数字就把任务叫回归。",
+            "sources": [
+              "https://developers.google.com/machine-learning/intro-to-ml/supervised",
+              "https://developers.google.com/machine-learning/crash-course/classification"
+            ]
+          },
+          {
+            "id": "regression",
+            "title": "回归：预测有数值意义的目标",
+            "content": "回归常用于预测有大小、单位和差值意义的数值目标。教学模拟：预测客户未来30天购买金额，预测结果1200元是金额估计，不是是否购买的标签。解释时要说明单位、预测时间范围和误差，不能把估计当成保证。判断任务先看要预测什么，不能只凭模型输出包含数字。",
+            "sources": [
+              "https://developers.google.com/machine-learning/intro-to-ml/supervised",
+              "https://developers.google.com/machine-learning/crash-course/linear-regression"
+            ]
+          }
+        ],
+        "context_chars": 1084,
+        "evidence_status": "candidate_materials",
+        "constraints": {
+          "one_goal": true,
+          "check_understanding_at_section_end": true,
+          "defer_optional_branches": true,
+          "max_output_chars": 1200,
+          "no_unsupported_claims": true
+        },
+        "output_contract": {
+          "request_id": "same as request",
+          "kind": "explain",
+          "text": "Chinese teaching text or feedback",
+          "citations": "list of provided material IDs",
+          "status": [
+            "grounded",
+            "insufficient_evidence"
+          ]
+        }
+      },
+      "response": {
+        "request_id": "f552cf4bed584a5ab04571a2640e51cd",
+        "kind": "explain",
+        "status": "grounded",
+        "text": "这次先弄清一个区别：要预测的目标，和用数字表达结果的方式。假设我们关心客户未来30天买不买，目标是购买或不购买两个类别；模型给出0.7，表示它对购买这一类别的概率估计，仍服务于分类任务。[classification][probability_vs_regression]\n如果我们关心的是客户未来30天会花多少元，目标就是金额，1200元是金额的数值预测，这才是这里的回归例子。[regression]\n所以先看原问题想得到什么，再解释数字代表什么。概率和金额估计都不保证实际结果。本段先停在这个区别，下一步再统一用一个例子检查理解。",
+        "citations": [
+          "classification",
+          "probability_vs_regression",
+          "regression"
+        ]
+      }
+    },
+    {
+      "request": {
+        "request_id": "cd329a02d87f46279ce2fc27fbadb0ca",
+        "session_id": "c4636aef761e4d78871b36d1d67958fc",
+        "kind": "assess",
+        "goal": "用客户购买案例区分任务目标与概率输出，解释为什么分类输出数字仍不等于回归",
+        "question": "",
+        "materials": [
+          {
+            "id": "probability_vs_regression",
+            "title": "关联卡：分类输出概率，为什么仍是分类？",
+            "content": "区分任务目标与输出形式。若目标是未来30天‘购买或不购买’，模型可以输出购买这一类别的概率估计0.7，任务仍围绕类别预测。若目标是购买金额，则是在预测金额数值。0.7本身不能决定是哪类任务，必须结合它代表的含义；概率估计也不保证该客户一定购买，或一定有校准良好的70%真实频率。",
+            "sources": [
+              "https://developers.google.com/machine-learning/crash-course/classification",
+              "https://scikit-learn.org/stable/modules/classification_threshold.html"
+            ]
+          },
+          {
+            "id": "classification",
+            "title": "分类：预测预先定义的类别",
+            "content": "分类的目标是判断对象属于哪些预先定义的类别。教学模拟：用历史客户记录及是否购买的标签，预测新客户未来30天是否购买。二分类有两个目标类别；普通多分类是在多个互斥类别中选一个。标签即使写成0和1也可以代表类别，不能只看输出是数字就把任务叫回归。",
+            "sources": [
+              "https://developers.google.com/machine-learning/intro-to-ml/supervised",
+              "https://developers.google.com/machine-learning/crash-course/classification"
+            ]
+          },
+          {
+            "id": "regression",
+            "title": "回归：预测有数值意义的目标",
+            "content": "回归常用于预测有大小、单位和差值意义的数值目标。教学模拟：预测客户未来30天购买金额，预测结果1200元是金额估计，不是是否购买的标签。解释时要说明单位、预测时间范围和误差，不能把估计当成保证。判断任务先看要预测什么，不能只凭模型输出包含数字。",
+            "sources": [
+              "https://developers.google.com/machine-learning/intro-to-ml/supervised",
+              "https://developers.google.com/machine-learning/crash-course/linear-regression"
+            ]
+          }
+        ],
+        "context_chars": 1084,
+        "evidence_status": "candidate_materials",
+        "constraints": {
+          "one_goal": true,
+          "check_understanding_at_section_end": true,
+          "defer_optional_branches": true,
+          "max_output_chars": 1200,
+          "no_unsupported_claims": true
+        },
+        "output_contract": {
+          "request_id": "same as request",
+          "kind": "assess",
+          "text": "Chinese teaching text or feedback",
+          "citations": "list of provided material IDs",
+          "status": [
+            "grounded",
+            "insufficient_evidence"
+          ],
+          "verdict": [
+            "evidence_recorded",
+            "needs_support",
+            "uncertain"
+          ]
+        },
+        "checkpoint": {
+          "question": "教学模拟：系统甲预测客户未来30天是否购买，输出0.8；系统乙预测未来30天购买金额，输出800元。你会怎样区分任务和两个数字的含义？",
+          "rubric": [
+            "按预测目标区分类别与金额，而非只按是否输出数字判断",
+            "0.8是购买类别的概率估计，不是金额或必然购买",
+            "800元是金额预测，带时间范围与单位，也存在误差"
+          ]
+        },
+        "learner_answer": "合成试用回答：甲预测未来30天是否购买，是分类，0.8是购买概率估计；乙预测未来30天购买金额，是回归，800元是金额预测，都不能保证实际结果。"
+      },
+      "response": {
+        "request_id": "cd329a02d87f46279ce2fc27fbadb0ca",
+        "kind": "assess",
+        "status": "grounded",
+        "text": "这份合成回答按目标区分了分类与回归，也解释了0.8和800元的含义，保留了未来30天的范围，并说明预测不保证实际结果，覆盖本题三个评分要点。[probability_vs_regression][regression] 这里只记录这次演练中的作答表现；还没有真实学习者、独立迁移或延时保持证据。",
+        "citations": [
+          "probability_vs_regression",
+          "regression"
+        ],
+        "verdict": "evidence_recorded"
+      }
+    },
+    {
+      "request": {
+        "request_id": "3f676ac613904bcd88dced9ffed8d061",
+        "session_id": "c4636aef761e4d78871b36d1d67958fc",
+        "kind": "summarize",
+        "goal": "用客户购买案例区分任务目标与概率输出，解释为什么分类输出数字仍不等于回归",
+        "question": "",
+        "materials": [
+          {
+            "id": "probability_vs_regression",
+            "title": "关联卡：分类输出概率，为什么仍是分类？",
+            "content": "区分任务目标与输出形式。若目标是未来30天‘购买或不购买’，模型可以输出购买这一类别的概率估计0.7，任务仍围绕类别预测。若目标是购买金额，则是在预测金额数值。0.7本身不能决定是哪类任务，必须结合它代表的含义；概率估计也不保证该客户一定购买，或一定有校准良好的70%真实频率。",
+            "sources": [
+              "https://developers.google.com/machine-learning/crash-course/classification",
+              "https://scikit-learn.org/stable/modules/classification_threshold.html"
+            ]
+          },
+          {
+            "id": "classification",
+            "title": "分类：预测预先定义的类别",
+            "content": "分类的目标是判断对象属于哪些预先定义的类别。教学模拟：用历史客户记录及是否购买的标签，预测新客户未来30天是否购买。二分类有两个目标类别；普通多分类是在多个互斥类别中选一个。标签即使写成0和1也可以代表类别，不能只看输出是数字就把任务叫回归。",
+            "sources": [
+              "https://developers.google.com/machine-learning/intro-to-ml/supervised",
+              "https://developers.google.com/machine-learning/crash-course/classification"
+            ]
+          },
+          {
+            "id": "regression",
+            "title": "回归：预测有数值意义的目标",
+            "content": "回归常用于预测有大小、单位和差值意义的数值目标。教学模拟：预测客户未来30天购买金额，预测结果1200元是金额估计，不是是否购买的标签。解释时要说明单位、预测时间范围和误差，不能把估计当成保证。判断任务先看要预测什么，不能只凭模型输出包含数字。",
+            "sources": [
+              "https://developers.google.com/machine-learning/intro-to-ml/supervised",
+              "https://developers.google.com/machine-learning/crash-course/linear-regression"
+            ]
+          }
+        ],
+        "context_chars": 1084,
+        "evidence_status": "candidate_materials",
+        "constraints": {
+          "one_goal": true,
+          "check_understanding_at_section_end": true,
+          "defer_optional_branches": true,
+          "max_output_chars": 1200,
+          "no_unsupported_claims": true
+        },
+        "output_contract": {
+          "request_id": "same as request",
+          "kind": "summarize",
+          "text": "Chinese teaching text or feedback",
+          "citations": "list of provided material IDs",
+          "status": [
+            "grounded",
+            "insufficient_evidence"
+          ]
+        },
+        "assessment": {
+          "verdict": "evidence_recorded",
+          "feedback": "这份合成回答按目标区分了分类与回归，也解释了0.8和800元的含义，保留了未来30天的范围，并说明预测不保证实际结果，覆盖本题三个评分要点。[probability_vs_regression][regression] 这里只记录这次演练中的作答表现；还没有真实学习者、独立迁移或延时保持证据。",
+          "origin": "codex_manual_walkthrough",
+          "semantic_review": "not_independently_verified",
+          "attempt": 1,
+          "assistance_used_at_submission": false
+        },
+        "learner_answer": "合成试用回答：甲预测未来30天是否购买，是分类，0.8是购买概率估计；乙预测未来30天购买金额，是回归，800元是金额预测，都不能保证实际结果。",
+        "assistance_used": false
+      },
+      "response": {
+        "request_id": "3f676ac613904bcd88dced9ffed8d061",
+        "kind": "summarize",
+        "status": "grounded",
+        "text": "本轮围绕任务目标与数字含义完成了一次合成案例演练：是否购买对应类别预测，购买概率估计可以用数字表达；金额预测则对应这里的回归任务。[classification][regression][probability_vs_regression] 演练中的回答覆盖了本题要点。阈值如何选择仍在待处理列表，没有自动展开。若继续学习，可以主动选择该问题；本记录不代表真实学习效果或8B模型能力。",
+        "citations": [
+          "classification",
+          "regression",
+          "probability_vs_regression"
+        ]
+      }
+    }
+  ],
+  "final_state": {
+    "schema_version": 1,
+    "session_id": "c4636aef761e4d78871b36d1d67958fc",
+    "unit_id": "probability_vs_regression",
+    "goal": "用客户购买案例区分任务目标与概率输出，解释为什么分类输出数字仍不等于回归",
+    "phase": "completed",
+    "pending": null,
+    "deferred": [
+      {
+        "question": "之后再了解阈值如何选择。",
+        "status": "unresolved"
+      }
+    ],
+    "events": [
+      {
+        "type": "request_prepared",
+        "kind": "explain",
+        "request_id": "f552cf4bed584a5ab04571a2640e51cd"
+      },
+      {
+        "type": "output_applied",
+        "kind": "explain",
+        "status": "grounded",
+        "origin": "codex_manual_walkthrough",
+        "text": "这次先弄清一个区别：要预测的目标，和用数字表达结果的方式。假设我们关心客户未来30天买不买，目标是购买或不购买两个类别；模型给出0.7，表示它对购买这一类别的概率估计，仍服务于分类任务。[classification][probability_vs_regression]\n如果我们关心的是客户未来30天会花多少元，目标就是金额，1200元是金额的数值预测，这才是这里的回归例子。[regression]\n所以先看原问题想得到什么，再解释数字代表什么。概率和金额估计都不保证实际结果。本段先停在这个区别，下一步再统一用一个例子检查理解。",
+        "citations": [
+          "classification",
+          "probability_vs_regression",
+          "regression"
+        ],
+        "validation": "structure_only_not_factual_entailment"
+      },
+      {
+        "type": "defer",
+        "text": "之后再了解阈值如何选择。",
+        "phase": "checkpoint_ready"
+      },
+      {
+        "type": "checkpoint",
+        "text": "",
+        "phase": "awaiting_answer"
+      },
+      {
+        "type": "answer",
+        "text": "合成试用回答：甲预测未来30天是否购买，是分类，0.8是购买概率估计；乙预测未来30天购买金额，是回归，800元是金额预测，都不能保证实际结果。",
+        "phase": "assessment_ready"
+      },
+      {
+        "type": "request_prepared",
+        "kind": "assess",
+        "request_id": "cd329a02d87f46279ce2fc27fbadb0ca"
+      },
+      {
+        "type": "output_applied",
+        "kind": "assess",
+        "status": "grounded",
+        "origin": "codex_manual_walkthrough",
+        "text": "这份合成回答按目标区分了分类与回归，也解释了0.8和800元的含义，保留了未来30天的范围，并说明预测不保证实际结果，覆盖本题三个评分要点。[probability_vs_regression][regression] 这里只记录这次演练中的作答表现；还没有真实学习者、独立迁移或延时保持证据。",
+        "citations": [
+          "probability_vs_regression",
+          "regression"
+        ],
+        "validation": "structure_only_not_factual_entailment"
+      },
+      {
+        "type": "request_prepared",
+        "kind": "summarize",
+        "request_id": "3f676ac613904bcd88dced9ffed8d061"
+      },
+      {
+        "type": "output_applied",
+        "kind": "summarize",
+        "status": "grounded",
+        "origin": "codex_manual_walkthrough",
+        "text": "本轮围绕任务目标与数字含义完成了一次合成案例演练：是否购买对应类别预测，购买概率估计可以用数字表达；金额预测则对应这里的回归任务。[classification][regression][probability_vs_regression] 演练中的回答覆盖了本题要点。阈值如何选择仍在待处理列表，没有自动展开。若继续学习，可以主动选择该问题；本记录不代表真实学习效果或8B模型能力。",
+        "citations": [
+          "classification",
+          "regression",
+          "probability_vs_regression"
+        ],
+        "validation": "structure_only_not_factual_entailment"
+      }
+    ],
+    "learner_answer": "合成试用回答：甲预测未来30天是否购买，是分类，0.8是购买概率估计；乙预测未来30天购买金额，是回归，800元是金额预测，都不能保证实际结果。",
+    "attempts": 1,
+    "assistance_used": false,
+    "assessment": {
+      "verdict": "evidence_recorded",
+      "feedback": "这份合成回答按目标区分了分类与回归，也解释了0.8和800元的含义，保留了未来30天的范围，并说明预测不保证实际结果，覆盖本题三个评分要点。[probability_vs_regression][regression] 这里只记录这次演练中的作答表现；还没有真实学习者、独立迁移或延时保持证据。",
+      "origin": "codex_manual_walkthrough",
+      "semantic_review": "not_independently_verified",
+      "attempt": 1,
+      "assistance_used_at_submission": false
+    },
+    "answer_history": [
+      {
+        "attempt": 1,
+        "text": "合成试用回答：甲预测未来30天是否购买，是分类，0.8是购买概率估计；乙预测未来30天购买金额，是回归，800元是金额预测，都不能保证实际结果。",
+        "assistance_used": false
+      }
+    ],
+    "previous_units": [],
+    "learning_claim": "workflow_closed_assessment_unverified",
+    "checkpoint_question": "教学模拟：系统甲预测客户未来30天是否购买，输出0.8；系统乙预测未来30天购买金额，输出800元。你会怎样区分任务和两个数字的含义？"
+  }
+}

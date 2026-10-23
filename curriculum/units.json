@@ -1,0 +1,5 @@
+[
+ {"id":"probability_vs_regression","goal":"用客户购买案例区分任务目标与概率输出，解释为什么分类输出数字仍不等于回归","material_ids":["probability_vs_regression","classification","regression"],"checkpoint":{"question":"教学模拟：系统甲预测客户未来30天是否购买，输出0.8；系统乙预测未来30天购买金额，输出800元。你会怎样区分任务和两个数字的含义？","rubric":["按预测目标区分类别与金额，而非只按是否输出数字判断","0.8是购买类别的概率估计，不是金额或必然购买","800元是金额预测，带时间范围与单位，也存在误差"]}},
+ {"id":"classification_vs_clustering","goal":"区分按已知类别预测与探索未知客群，并识别信息不足的需求","material_ids":["classification_vs_clustering","classification","clustering"],"checkpoint":{"question":"教学模拟：甲有历史客户是否购买的标签，希望预测新客户；乙只有客户行为，希望探索相似群体。你会怎样说明两者的任务差异？","rubric":["甲按已知目标与标签学习，可设为分类","乙按行为相似性探索分组，可考虑聚类","不能只因两者都分组就认定为相同任务"]}},
+ {"id":"probability_to_action","goal":"区分购买概率估计、决策阈值和实际行动","material_ids":["probability_to_action","classification"],"checkpoint":{"question":"教学模拟：某客户购买概率估计0.7，规则约定大于或等于0.6进入跟进名单。这个客户是否入选？0.7与0.6分别是什么？为什么不能认定一定购买？","rubric":["按给定规则入选","区分模型概率估计与人为约定的决策阈值","入选与概率估计不保证实际购买，阈值选择还需业务验证"]}}
+]

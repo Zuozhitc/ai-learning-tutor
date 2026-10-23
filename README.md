@@ -1,6 +1,6 @@
 # AI 基础概念学习辅导
 
-状态：需求探索与检索原型 v0。已实现教材检索和上下文导出，尚未接入生成模型；正式产品名称待定。
+状态：模型无关教学框架 v0。已实现检索与可回放的教学流程内核，保留内部生成契约；没有真实模型服务或最终用户界面。
 
 项目主页：[Zuozhitc/ai-learning-tutor](https://github.com/Zuozhitc/ai-learning-tutor)。后续进展持续更新到本仓库。
 
@@ -41,6 +41,7 @@
 
 - [2026-10-20：确定教学 AI 与学习者辅导方向](docs/progress/2026-10-20.md)
 - [2026-10-22：跨概念讲解中的理解缺口](docs/progress/2026-10-22.md)
+- [2026-10-23：模型无关教学流程内核](docs/progress/2026-10-23.md)
 - [场景与问题定义草稿](docs/problem-brief.md)
 - [首位学习者访谈记录](docs/research/2026-10-20-first-learner.md)
 - [首版需求摘要草案](docs/mvp-brief.md)
@@ -48,6 +49,19 @@
 - [教学来源与 8B + RAG 候选方案](docs/knowledge-and-rag.md)
 - [检索原型：运行方法与方式取舍](docs/retrieval-prototype.md)
 - [17题检索诊断报告](reports/retrieval-v0/retrieval.md)
+- [模型无关框架：设计与操作](docs/framework.md)
+- [框架验证报告](reports/framework-v0/verification.md)
+
+## 回放教学流程
+
+8B仅为受限模型设计假设，尚未选型。应用内部保留生成契约，不提供服务地址、密钥或模型选择界面。以Codex手动填写请求/响应和固定样例先验证框架。
+
+```powershell
+python -m tutor_rag.workflow demo --out output/framework-demo.json
+python -m unittest discover -s tests -v
+```
+
+已完成25项测试，以及包含补充重答、支线暂存、暂停恢复的合成回放。固定样例与Codex手动走查不代表真实8B能力或真实用户学习效果。详细操作见[框架说明](docs/framework.md)。
 
 ## 运行检索原型
 
@@ -65,4 +79,4 @@ python -m unittest discover -s tests -v
 
 ## 当前下一步
 
-先由学习者审阅教材卡并提供其他真实问法，复核检索结果；随后再接入真实嵌入模型进行向量检索对照，以及具体8B生成模型。用户本轮确认目前没有模型服务，先查看检索原型。课程状态机、段末统一确认和完整教学效果仍未实现或验证。
+用一个单元做真实学习者走查，复核内容、学习节奏与反馈，再明确最终界面和后续实现范围。用户已澄清当前不要求真实模型接入；具体模型、向量检索和真实教学效果测试留待后续决定。
